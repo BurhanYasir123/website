@@ -11,6 +11,16 @@
 		  display: flex;
 		  height: 100vh;
 		}
+		.nav-bar {
+			display: flex;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 60px;
+			background-color: gray;
+			justify-content: center;
+			border: 1px solid black;
+		}
 
 		.masterFlex {
 		  display: flex;
@@ -44,9 +54,19 @@
 		  height: 50px;
 		  text-align: center;
 		}
+		.img {
+			width: 50px;
+			height: 50px;
+			padding: 5px;
+		}
 	</style>
 </head>
-<body>
+<body id="body">
+	<div class="nav-bar">
+		<img src="reload.png" alt="ERROR" class="img" id="img">
+		<img src="rainbow.png" alt="ERROR" class="img" id="img2">
+		<img src="help.png" alt="ERROR" class="img" id="img3">
+	</div>
 	<div class="masterFlex">
 		<h1 class="title">Array of pictures and there indexes</h1>
 		<div class="flex-container2">
@@ -76,6 +96,10 @@
 			document.getElementById(`2:${i}`).setAttribute("src", `./painting${element}.png`);
 			document.getElementById(`2:${i}`).onclick = function() { alert(element); };
 		}
+		document.getElementById("img").onclick  = function() {window.location = "./1.html"}
+		document.getElementById("img2").onclick = function() {document.getElementById("body").style.backgroundColor = prompt("Enter the color you want to set",document.getElementById("body").style.backgroundColor)}
+		const message = "Reload Symbol: When you click the Reload Symbol it reloads the page\nRainbow Square: When you click the Rainbow Square it opens a prompt where you enter the color of the background you want to set\nQuestion Mark: When you click the Question Mark it brings this up"
+		document.getElementById("img3").onclick = function() {alert(message)}
 	</script>
 </body>
 </html>
